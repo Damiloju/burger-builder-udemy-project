@@ -8,7 +8,8 @@ import Spinner from "../../components/UI/Spinner/Spinner";
 class Orders extends Component {
 	state = {
 		orders: [],
-		loading: true
+		loading: true,
+		error: false
 	};
 
 	componentDidMount() {
@@ -26,7 +27,7 @@ class Orders extends Component {
 			})
 			.catch(err => {
 				console.log(err);
-				this.setState({ loading: false });
+				this.setState({ loading: false, error: true });
 			});
 	}
 
@@ -41,6 +42,7 @@ class Orders extends Component {
 			);
 		});
 		if (this.state.loading) orders = <Spinner />;
+		if (this.state.error) orders = <p>Could not load orders</p>;
 		return <div>{orders}</div>;
 	}
 }
