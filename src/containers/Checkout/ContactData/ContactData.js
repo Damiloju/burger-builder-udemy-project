@@ -91,6 +91,24 @@ class ContactData extends Component {
 			});
 	};
 
+	inputFormHandler = (event, id) => {
+		const updatedEl = {
+			...this.state.orderForm
+		};
+
+		const deepUpdate = {
+			...updatedEl[id]
+		};
+
+		deepUpdate.value = event.target.value;
+
+		updatedEl[id] = deepUpdate;
+
+		this.setState({
+			orderForm: updatedEl
+		});
+	};
+
 	render() {
 		const formElements = [];
 
@@ -108,6 +126,9 @@ class ContactData extends Component {
 						elementType={formElement.config.elementType}
 						elementConfig={formElement.config.elementConfig}
 						value={formElement.config.value}
+						changed={event =>
+							this.inputFormHandler(event, formElement.id)
+						}
 					/>
 				))}
 				<Button btnType="Success">Order</Button>
