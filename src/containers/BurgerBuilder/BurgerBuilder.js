@@ -18,8 +18,6 @@ const INGREDIENTS_PRICES = {
 
 class BurgerBuilder extends Component {
 	state = {
-		ingredients: null,
-		totalPrice: 4,
 		purchasable: false,
 		purchasing: false,
 		loading: false,
@@ -27,21 +25,21 @@ class BurgerBuilder extends Component {
 	};
 
 	componentDidMount() {
-		axios
-			.get(
-				"https://react-my-burger-634e6.firebaseio.com/ingredients.json"
-			)
-			.then(res => {
-				this.setState({
-					ingredients: res.data
-				});
-			})
-			.catch(err => {
-				this.setState({
-					error: true
-				});
-				console.log(err);
-			});
+		// axios
+		// 	.get(
+		// 		"https://react-my-burger-634e6.firebaseio.com/ingredients.json"
+		// 	)
+		// 	.then(res => {
+		// 		this.setState({
+		// 			ingredients: res.data
+		// 		});
+		// 	})
+		// 	.catch(err => {
+		// 		this.setState({
+		// 			error: true
+		// 		});
+		// 		console.log(err);
+		// 	});
 	}
 
 	updatePurchaseState(ingredients) {
