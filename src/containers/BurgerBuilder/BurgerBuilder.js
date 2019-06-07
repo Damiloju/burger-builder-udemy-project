@@ -37,7 +37,7 @@ class BurgerBuilder extends Component {
 			this.setState({ purchasing: true });
 		} else {
 			this.props.onSetAuthRedirectPath("/checkout");
-			this.props.history.push("/auth");
+			this.props.hashHistory.push("/auth");
 		}
 	};
 
@@ -47,7 +47,8 @@ class BurgerBuilder extends Component {
 
 	purchaseContinueHandler = () => {
 		this.props.onInitPurchase();
-		this.props.history.push("/checkout");
+		// this.props.history.push("/checkout");
+		this.props.hashHistory.push("/checkout");
 	};
 
 	render() {
