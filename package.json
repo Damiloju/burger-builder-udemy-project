@@ -2,9 +2,10 @@
 	"name": "burger-builder",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "https://damiloju.github.io/burger-builder",
+	"homepage": "https://damiloju.github.io/burger-builder-udemy-project",
 	"dependencies": {
 		"axios": "^0.18.0",
+		"gh-pages": "^2.0.1",
 		"prop-types": "^15.7.2",
 		"react": "^16.8.6",
 		"react-dom": "^16.8.6",
